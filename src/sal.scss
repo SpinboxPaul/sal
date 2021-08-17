@@ -1,4 +1,5 @@
 /**
+ * fixed PRD 10.05.21
  * Settings
  */
 
@@ -105,7 +106,7 @@ body.sal-disabled [data-sal|='fade'] {
 }
 
 [data-sal='slide-up'] {
-  transform: translateY($sal-slide-offset);
+  transform: translateY(130px);
 }
 
 [data-sal='slide-down'] {
@@ -161,7 +162,13 @@ body.sal-disabled [data-sal|='zoom'] {
 }
 
 [data-sal='flip-up'] {
-  transform: perspective(2000px) rotateX(-$sal-flip-rotate);
+  transform: perspective(2000px) rotateX(-55deg);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.4s ease;
+}
+
+[data-sal=flip-up].sal-animate {
+    opacity: 1;
 }
 
 [data-sal='flip-down'] {
